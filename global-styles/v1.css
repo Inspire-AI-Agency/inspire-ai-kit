@@ -1,8 +1,11 @@
+
 /*
-	Inspire AI Global CSS Styles
+  Inspire AI Global CSS Styles (Updated)
+  Focus: Light site base, reusable sections, neutral client overrides
 */
 
 :root {
+  /* Neutral + structural tokens */
   --color-primary: #333333;
   --color-neutral-light: #F5F5F5;
   --color-neutral-dark: #1E1E1E;
@@ -12,13 +15,16 @@
 
   --font-heading: 'Poppins', sans-serif;
   --font-body: 'Inter', sans-serif;
+
   --spacing-sm: 0.75rem;
   --spacing-md: 1.5rem;
   --spacing-lg: 3rem;
+
   --border-radius: 8px;
   --max-width: 1200px;
 }
 
+/* Base Elements */
 body {
   font-family: var(--font-body);
   color: var(--color-neutral-dark);
@@ -32,12 +38,39 @@ h1, h2, h3 {
   color: var(--color-primary);
 }
 
-/* Basic layout and utilities */
-.container { max-width: var(--max-width); margin: 0 auto; padding: 0 var(--spacing-md); }
-.section { padding: var(--spacing-lg) var(--spacing-md); }
-.section-light { background-color: var(--color-neutral-light); }
-.section-dark { background-color: var(--color-neutral-dark); color: white; }
+/* Layout */
+.container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 var(--spacing-md);
+}
 
+.section {
+  padding: var(--spacing-lg) var(--spacing-md);
+}
+
+/* Background Variants (light site strategy) */
+.section-white {
+  background-color: white;
+  color: var(--color-neutral-dark);
+}
+
+.section-light {
+  background-color: var(--color-neutral-light);
+  color: var(--color-neutral-dark);
+}
+
+.section-dark {
+  background-color: var(--color-neutral-dark);
+  color: white;
+}
+
+.section-primary {
+  background-color: var(--color-primary);
+  color: white;
+}
+
+/* Buttons */
 .btn {
   padding: 12px 24px;
   font-weight: bold;
@@ -49,9 +82,25 @@ h1, h2, h3 {
   border-radius: var(--border-radius);
 }
 
-.btn-pill { border-radius: 999px; }
+.btn-pill {
+  border-radius: 999px;
+}
 
+.btn-secondary {
+  background-color: var(--color-accent3);
+  color: black;
+}
+
+.btn-secondary:hover {
+  background-color: var(--color-accent1);
+  color: white;
+}
+
+/* Utilities */
 .text-center { text-align: center; }
+.text-muted { color: var(--color-accent2); }
+.text-subtle { color: var(--color-accent3); }
+
 .mb-1 { margin-bottom: 0.5rem; }
 .mb-2 { margin-bottom: 1rem; }
 .mb-3 { margin-bottom: 1.5rem; }
